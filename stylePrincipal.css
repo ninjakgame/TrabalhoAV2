@@ -1,0 +1,96 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 120vh;
+}
+
+.nomeTabela{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.containerTabela{
+    flex: 1;
+    margin-top: 80px;
+}
+
+.butao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+button{
+    padding: 10px 30px;
+    border: none;
+    background-color: blue;
+    border-radius: 4px;
+    color: white;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+#criar{
+    background-color: rgb(0, 255, 0);
+}
+
+#criar:hover{
+    background-color: rgb(29, 174, 29);
+}
+
+
+#editar{
+    background-color: aqua;
+}
+
+#editar:hover{
+    background-color: rgb(28, 142, 142);
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+thead{
+    background: #4361ee;
+    color: white;
+}
+
+th, td{
+    padding: 12px 15px;
+    text-align: left;
+}
+
+select{
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button.excluir{
+    background-color: rgb(193, 1, 1);
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button.excluir:hover{
+    background-color: #ff1a1a;
+}

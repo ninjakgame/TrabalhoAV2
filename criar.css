@@ -1,0 +1,74 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.cadastroConta{
+    flex:1;
+    margin-top: 80px;
+}
+
+.container{
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.325);
+}
+
+h2{
+    text-align: center;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    padding: 10px;
+    margin: 20px 0;
+    border: transparent;
+    border-bottom: 1px solid black;
+}
+
+input:focus{
+    border: 2px solid rgb(98, 98, 248);
+    outline: none;
+}
+
+button{
+    padding: 18px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(26, 207, 26);
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgb(19, 153, 19);
+}
+
+label{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+select{
+    margin: 10px 0 10px 0 ;
+    padding: 10px;
+}
+
+input.error, select.error {
+    border: 2px solid red !important;
+    background-color: #ffe6e6;
+    transition: 0.3s;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Principal</title>
+    <link rel="stylesheet" href="stylePrincipal.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="topo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><i class="fa-solid fa-globe"></i> Meu Site</a>
+        </div>
+
+        <nav>
+            <a href="ajuda.html"><i class="fa-solid fa-house"></i> Ajuda</a>
+            <a href="sobre.html"><i class="fa-solid fa-info-circle"></i> Sobre</a>
+
+            <div class="dropdown">
+                <a href="#"><i class="fa-solid fa-bars"></i> Menu</a>
+                <div class="dropdown-content">
+                    <a href="cadastroCliente.html"><i class="fa-solid fa-user"></i> Cadastro Cliente</a>
+                    <a href="eventos.html"><i class="fa-solid fa-gear"></i> Cadastro Tabela</a>
+                    <a href="criar.html"><i class="fa-solid fa-right-from-bracket"></i> Cadastro
+                        Usuario</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="containerTabela">
+        <div class="nome">
+            <h1 class="nomeTabela">TABELA DE AGENDAMENTO</h1>
+        </div>
+
+        <div class="butao">
+            <button onclick="criar()" id="criar">Criar</button>
+            <button onclick="editar()" id="editar">Editar</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOME</th>
+                    <th>EMAIL</th>
+                    <th>AGENDAMENTO</th>
+                    <th>STATUS</th>
+                    <th>EXCLUIR</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Joao</td>
+                    <td>JoaoPedro@gmail.com</td>
+                    <td>Reunião</td>
+                    <td>
+                        <select>
+                            <option value="agendamento">Agendamento</option>
+                            <option value="na_lista">Na lista</option>
+                            <option value="cancelado">Cancelado</option>
+                        </select>
+                    </td>
+                    <td>
+                        <button class="excluir">X</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Pedro Fabricio</td>
+                    <td>Pedro12@gmail.com</td>
+                    <td>Aula</td>
+                    <td>
+                        <select>
+                            <option value="agendamento">Agendamento</option>
+                            <option value="na_lista">Na lista</option>
+                            <option value="cancelado">Cancelado</option>
+                        </select>
+                    </td>
+                    <td>
+                        <button class="excluir">X</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Leandro</td>
+                    <td>Leogamer2025@gmail.com</td>
+                    <td>Evento</td>
+                    <td>
+                        <select>
+                            <option value="agendamento">Agendamento</option>
+                            <option value="na_lista">Na lista</option>
+                            <option value="cancelado">Cancelado</option>
+                        </select>
+                    </td>
+                    <td>
+                        <button class="excluir">X</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <footer class="footer">
+    <div class="footer-content">
+        <h3>EVENTO+</h3>
+        <p>Organizando eventos com facilidade e rapidez.</p>
+
+        <div class="footer-links">
+            <a href="#">Início</a>
+            <a href="eventos.html">Agendar Evento</a>
+            <a href="ajuda.html">Contato</a>
+            <a href="sobre.html">Sobre</a>
+        </div>
+
+        <p class="footer-copy">© 2025 EVENTO+ - Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+    <script src="script2.js"></script>
+</body>
+
+</html>

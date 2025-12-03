@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Do Cliente</title>
+    <link rel="stylesheet" href="cliente.css">
+    <link rel="stylesheet" href="topo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><i class="fa-solid fa-globe"></i> Meu Site</a>
+        </div>
+
+        <nav>
+            <a href="ajuda.html"><i class="fa-solid fa-headphones"></i> Ajuda</a>
+            <a href="sobre.html"><i class="fa-solid fa-info-circle"></i> Sobre</a>
+
+            <div class="dropdown">
+                <a href="#"><i class="fa-solid fa-bars"></i> Menu</a>
+                <div class="dropdown-content">
+                    <a href="cadastroCliente.html"><i class="fa-solid fa-user"></i> Cadastro Cliente</a>
+                    <a href="eventos.html"><i class="fa-solid fa-gear"></i> Cadastro Tabela</a>
+                    <a href="criar.html"><i class="fa-solid fa-right-from-bracket"></i> Cadastro
+                        Usuario</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <h1>Cadastro do Cliente</h1>
+
+        <form action="form-cadastro.html" onsubmit="return validarSenha()">
+            <h2>Contato do Cliente</h2>
+
+            <input type="text" name="nome" id="nome" required placeholder="Usuario">
+
+            <input type="email" name="email" id="email" required placeholder="E-mail">
+
+            <input type="password" name="senha" id="senha" required placeholder="Senha">
+
+            <div class="number">
+
+                <input type="text" name="cpf" id="cpf" maxlength="11" required placeholder="CPF">
+
+                <input type="text" name="telefone" id="telefone" maxlength="11" required placeholder="Telefone">
+
+            </div>
+
+            <h2>Endereço Completo</h2>
+            <input type="text" name="rua" id="rua" placeholder="Rua">
+
+            <input type="text" name="numero" id="numero" maxlength="4" placeholder="Numero do Local">
+
+            <input type="text" name="cidade" id="cidade" maxlength="10" placeholder="Cidade">
+
+            <select name="estado" id="estado">
+                <option value="escolha" selected disabled>Escolha o seu Estado</option>
+                <option value="AC">AC</option>
+                <option value="AL">AL</option>
+                <option value="BA">BA</option>
+                <option value="CE">CE</option>
+                <option value="ES">ES</option>
+                <option value="GO">GO</option>
+                <option value="MT">MT</option>
+                <option value="MG">MG</option>
+                <option value="PR">PR</option>
+            </select>
+
+            <input type="text" name="cep" id="cep" maxlength="8" placeholder="Cep">
+
+            <button type="submit" onclick="return validarSenha()">Cadastrar</button>
+
+        </form>
+    </section>
+
+    <footer class="footer">
+    <div class="footer-content">
+        <h3>EVENTO+</h3>
+        <p>Organizando eventos com facilidade e rapidez.</p>
+
+        <div class="footer-links">
+            <a href="#">Início</a>
+            <a href="eventos.html">Agendar Evento</a>
+            <a href="ajuda.html">Contato</a>
+            <a href="sobre.html">Sobre</a>
+        </div>
+
+        <p class="footer-copy">© 2025 EVENTO+ - Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+    <script src="cliente.js"></script>
+</body>
+
+</html>
