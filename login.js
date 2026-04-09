@@ -26,7 +26,7 @@ function validar(){
         mostrarMensagem("Login realizado!", "sucesso");
 
         setTimeout(() => {
-            window.location.href = "index.html";
+            window.location.href = "paginaInicial.html";
         }, 1500);
 
     } else {
