@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="login.css">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="cadastro.css">
 </head>
 
 <body>
@@ -19,21 +19,22 @@
 
         <div class="conteudo">
             <form onsubmit="return validar()">
-                <p>LOGIN</p>
+                <p>CADASTRO</p>
 
                 <input type="text" id="nome" required placeholder="Usuario">
                 <input type="email" id="email" required placeholder="Email">
                 <input type="password" id="senha" required placeholder="Senha">
+                <input type="password" id="confirmarSenha" required placeholder="Confirmar Senha">
 
                 <div class="bot">
-                    <button type="submit">Entrar</button>
-                    <button type="button" onclick="cadastro()">Cadastrar-se</button>
+                    <button type="submit">Cadastrar</button>
+                    <button type="button" onclick="login()">Login</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
 
-<script src="login.js"></script>
+<script src="cadastro.js"></script>
 </body>
 </html>

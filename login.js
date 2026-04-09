@@ -1,67 +1,41 @@
-document.addEventListener("DOMContentLoaded", function () {
+function mostrarMensagem(texto, tipo){
+    const msg = document.getElementById("mensagem");
 
-    const nomeInput = document.getElementById("nome");
+    msg.textContent = texto;
+    msg.className = "mensagem mostrar " + tipo;
 
-    // Deixar nome em maiúsculo
-    nomeInput.addEventListener("input", function () {
-        this.value = this.value.toUpperCase();
-    });
+    setTimeout(() => {
+        msg.classList.remove("mostrar");
+    }, 3000);
+}
 
-    // Remove erro ao digitar
-    document.querySelectorAll("input").forEach(campo => {
-        campo.addEventListener("input", () => {
-            if (campo.value !== "") {
-                campo.classList.remove("error");
-            }
-        });
-    });
-});
+function validar(){
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value;
 
-function validarSenha() {
-    const nomeInput = document.getElementById("nome");
-    const emailInput = document.getElementById("email");
-    const senhaInput = document.getElementById("senha");
-    const confirmarInput = document.getElementById("confirmarSenha");
+    const usuario = JSON.parse(localStorage.getItem("usuario"));
 
-    function destacarCampo(campo) {
-        campo.focus();
-        campo.classList.add("error");
-    }
-
-    if (nomeInput.value === "") {
-        alert("Você esqueceu de colocar o seu nome!");
-        destacarCampo(nomeInput);
+    if(!usuario){
+        mostrarMensagem("Nenhum usuário cadastrado!", "erro");
         return false;
     }
 
-    if (emailInput.value === "") {
-        alert("Você esqueceu de colocar o email!");
-        destacarCampo(emailInput);
-        return false;
+    if(email === usuario.email && senha === usuario.senha){
+        localStorage.setItem("logado", "true");
+
+        mostrarMensagem("Login realizado!", "sucesso");
+
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 1500);
+
+    } else {
+        mostrarMensagem("Email ou senha incorretos!", "erro");
     }
 
-    if (senhaInput.value === "") {
-        alert("Você esqueceu de colocar a senha!");
-        destacarCampo(senhaInput);
-        return false;
-    }
+    return false;
+}
 
-    if (confirmarInput.value === "") {
-        alert("Você esqueceu de confirmar a senha!");
-        destacarCampo(confirmarInput);
-        return false;
-    }
-
-    if (senhaInput.value !== confirmarInput.value) {
-        alert("As senhas não são iguais!");
-        destacarCampo(confirmarInput);
-        return false;
-    }
-
-    alert("Cadastro realizado com sucesso!");
-
-    // 🔥 REDIRECIONAMENTO AQUI
-    window.location.href = "index.html";
-
-    return false; // impede envio padrão
+function cadastro(){
+    window.location.href = "cadastro.html";
 }

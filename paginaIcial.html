@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALA+</title>
+    <link rel="stylesheet" href="paginaInicial2.css">
+    <link rel="shortcut icon" href="agendamento.png" type="image/x-icon">
+    <link rel="stylesheet" href="topo3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="topo">
+            <div class="conteudoTopo">
+                <h2 class="logo">SALA+</h2>
+
+                <div class="links">
+                    <a href="sobre.html" class="login">SOBRE NOIS</a>
+                    <a href="cadastroCliente.html" class="login">AGENDAR AGORA</a>
+                    <a href="ajuda.html" class="login">AJUDA</a>
+                </div>
+            </div>
+        </div>
+        <div class="conteudoBaixo">
+            <div class="descricao">
+                <p class="descrition">BEM-VINDO DE VOLTA</p>
+
+                <p class="descrition"><span>EVENTOS ONLINE</span></p>
+
+                <button class="agendamentoAgora" onclick="agora()">AGENDAR AGORA</button>
+            </div>
+
+            <img src="Eventos.webp" alt="" id="imagemEvento">
+        </div>
+    </header>
+
+    <main>
+        <section class="animacao">
+            <div class="containerPlanos">
+                <h2 class="texto">PLANOS</h2>
+
+                <div class="cardsPlanos">
+                    <div class="planos animar">
+                        <h3><span class="planoBascio">PLANO BÁSICO</span></h3>
+
+                        <h3>❄️ Para Eventos Pequenos</h3>
+
+                        <h3>R$ 49,00/MÊS</h3>
+
+                        <p>✔ Ideal para pequenos eventos ou iniciantes</p>
+                        <p>✔ Até 50 convidados</p>
+                        <p>✔ Cadastro simples do evento</p>
+                        <p>✔ Envio de 1 lembrete por e-mail</p>
+                        <p>✔ Agenda básica (sem personalização)</p>
+                        <p>✔ Suporte via e-mail</p>
+                    </div>
+
+                    <div class="planos animar">
+                        <h3><span class="planoIntermediario">PLANO INTERMEDIARIO</span></h3>
+
+                        <h3>✨ Recomendado para eventos médios</h3>
+
+                        <h3>R$ 129,00/MÊS</h3>
+
+                        <p>✔ Até 200 convidados</p>
+                        <p>✔ Cadastro + formulário personalizado</p>
+                        <p>✔ Confirmação de presença (RSVP)</p>
+                        <p>✔ Envio de notificações WhatsApp e e-mail</p>
+                        <p>✔ Relatório simples do evento</p>
+                        <p>✔ Suporte via e-mail e chat</p>
+
+                    </div>
+
+                    <div class="planos animar">
+                        <h3><span class="planoPremium">PLANO PREMIUM</span></h3>
+
+                        <h3>🚀 Para grandes eventos e empresas</h3>
+
+                        <h3>R$ 299,00/MÊS</h3>
+
+                        <p>✔ Convidados ilimitados</p>
+                        <p>✔ Site próprio do evento com link personalizado</p>
+                        <p>✔ integração com pagamentos online</p>
+                        <p>✔ Painel com gráficos e estatísticas completas</p>
+                        <p>✔ Área de credenciamento e crachás</p>
+                        <p>✔ Envio de notificações ilimitadas (WhatsApp, SMS e e-mail)</p>
+                        <p>✔ Suporte 24h (prioritário)</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="animacao">
+            <h2 class="texto">AVALIAÇÕES</h2>
+
+            <div class="containerAvaliação">
+
+                <div class="cardsAvaliacao">
+                    <img src="pessoa1.svg" alt="">
+
+                    <div class="cardDescricao">
+                        <p class="nomePessoa">Henrique Fernandes</p>
+
+                        <div class="estrelas">
+                            <img src="estrela.png" alt="" class="imagemEstrela">
+                            <img src="estrela.png" alt="" class="imagemEstrela">
+                            <img src="estrela.png" alt="" class="imagemEstrela">
+                            <img src="estrela.png" alt="" class="imagemEstrela">
+                            <img src="estrela.png" alt="" class="imagemEstrela">
+                        </div>
+
+                        <p class="textoPessoa">“Site Muito bom para agendar eventos ráidos e práticos”</p>
+                    </div>
+                </div>
+
+                <div class="cardsAvaliacao">
+                    <img src="pessoa2.svg" alt="">
+
+                    <div class="cardDescricao">
+                        <p class="nomePessoa">Maria Garciana</p>
+
+                        <div class="estrelas">
+                            <img src="estrela.png" alt="" class="imagemEstrela">
+                            <img src="estrela.png" alt="" class="imagemEstrela">
+                            <img src="estrela.png" alt="" class="imagemEstrela">
+                            <img src="estrela.png" alt="" class="imagemEstrela">
+                            <img src="estrela.png" alt="" class="imagemEstrela">
+                        </div>
+
+                        <p class="textoPessoa">“Site cumpre no que ele faz e no que ele diz!”</p>
+                    </div>
+                </div>
+
+                <div class="cardsAvaliacao">
+                    <img src="pessoa3.svg" alt="">
+
+                    <div class="cardDescricao">
+                        <p class="nomePessoa">Fabio Alencar</p>
+
+                        <div class="estrelas">
+                            <img src="estrela.png" alt="" class="imagemEstrela">
+                            <img src="estrela.png" alt="" class="imagemEstrela">
+                            <img src="estrela.png" alt="" class="imagemEstrela">
+                            <img src="estrela.png" alt="" class="imagemEstrela">
+                            <img src="estrela.png" alt="" class="imagemEstrela">
+                        </div>
+
+                        <p class="textoPessoa">“Site bonito e detalhado e tambem explicativo”</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="animacao">
+            <div class="containerDuvidas">
+                <h2 class="texto">DUVIDAS FREQUENTES</h2>
+
+                <div class="cardsDuvidas">
+
+                    <div class="item">
+                        <div class="pergunta">
+                            <p>COMO POSSO AGENDAR UM EVENTO?</p>
+                            <img src="seta.svg" class="seta">
+                        </div>
+                        <div class="resposta">
+                            <p>Você pode agendar pelo botão "Agendar Agora".</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="pergunta">
+                            <p>QUAIS SÃO OS PLANOS?</p>
+                            <img src="seta.svg" class="seta">
+                        </div>
+                        <div class="resposta">
+                            <p>Temos básico, intermediário e premium.</p>
+                        </div>
+                    </div>
+
+                    <!-- ESCONDIDOS -->
+                    <div class="item extra">
+                        <div class="pergunta">
+                            <p>POSSO CANCELAR O PEDIDO?</p>
+                            <img src="seta.svg" class="seta">
+                        </div>
+                        <div class="resposta">
+                            <p>Sim, pode cancelar quando quiser.</p>
+                        </div>
+                    </div>
+
+                    <p class="ver-mais">VER MAIS</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="containerFooter">
+            <div class="esquerdo">
+                <h2 class="textoFooter">SALA+</h2>
+
+                <div class="descricaoEsquerda">
+                    <div class="eventoss">
+
+                        <h2>Eventos</h2>
+                        <a href="#">Agendamento</a>
+                        <a href="#">Lista de Agendas</a>
+                        <a href="#">Cadastro Clientes</a>
+                    </div>
+
+                    <div class="eventoss">
+                        <h2>Planos</h2>
+                        <a href="#">Pagamento</a>
+                        <a href="#">Ver Planos</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="esquerda">
+                <h2 class="textoFooter">APLICATIVOS</h2>
+
+                <div class="descricaoEsquerda">
+                    <div class="apps">
+                        <div class="topos">
+                            <a href="https://www.instagram.com/">
+                                <img src="instagram.svg" alt="">
+                            </a>
+
+                            <a href="https://www.facebook.com/?locale=pt_BR">
+                                <img src="facebook.svg" alt="">
+                            </a>
+
+                            <a href="https://web.whatsapp.com/">
+                                <img src="whatsapp.svg" alt="">
+                            </a>
+                        </div>
+
+                        <h4 id="arolba">@agendamento_sala+</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="paginaInicial.js"></script>
+</body>
+
+</html>

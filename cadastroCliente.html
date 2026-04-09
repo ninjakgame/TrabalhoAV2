@@ -6,31 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Do Cliente</title>
     <link rel="stylesheet" href="cliente.css">
-    <link rel="stylesheet" href="topo.css">
+    <link rel="stylesheet" href="paginaInicial2.css">
+    <link rel="stylesheet" href="topo3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 
 <body>
     <header>
-        <div class="logo">
-            <a href="index.html"><i class="fa-solid fa-globe"></i> Meu Site</a>
-        </div>
+        <div class="topo">
+            <div class="conteudoTopo">
+                <h2 class="logo"><a href="index.html">SALA+</a></h2>
 
-        <nav>
-            <a href="ajuda.html"><i class="fa-solid fa-headphones"></i> Ajuda</a>
-            <a href="sobre.html"><i class="fa-solid fa-info-circle"></i> Sobre</a>
-
-            <div class="dropdown">
-                <a href="#"><i class="fa-solid fa-bars"></i> Menu</a>
-                <div class="dropdown-content">
-                    <a href="cadastroCliente.html"><i class="fa-solid fa-user"></i> Cadastro Cliente</a>
-                    <a href="eventos.html"><i class="fa-solid fa-gear"></i> Cadastro Tabela</a>
-                    <a href="criar.html"><i class="fa-solid fa-right-from-bracket"></i> Cadastro
-                        Usuario</a>
+                <div class="links">
+                    <a href="sobre.html" class="login">SOBRE NOIS</a>
+                    <a href="cadastroCliente.html" class="login">AGENDAR AGORA</a>
+                    <a href="ajuda.html" class="login">AJUDA</a>
                 </div>
             </div>
-        </nav>
+        </div>
     </header>
 
     <section>
@@ -47,9 +41,9 @@
 
             <div class="number">
 
-                <input type="text" name="cpf" id="cpf" maxlength="11" required placeholder="CPF">
+                <input type="text" name="cpf" id="cpf" maxlength="14" required placeholder="CPF">
 
-                <input type="text" name="telefone" id="telefone" maxlength="11" required placeholder="Telefone">
+                <input type="text" name="telefone" id="telefone" maxlength="15" required placeholder="Telefone">
 
             </div>
 
@@ -80,21 +74,54 @@
         </form>
     </section>
 
-    <footer class="footer">
-    <div class="footer-content">
-        <h3>EVENTO+</h3>
-        <p>Organizando eventos com facilidade e rapidez.</p>
+    <footer>
+        <div class="containerFooter">
+            <div class="esquerdo">
+                <h2 class="textoFooter">SALA+</h2>
 
-        <div class="footer-links">
-            <a href="#">Início</a>
-            <a href="eventos.html">Agendar Evento</a>
-            <a href="ajuda.html">Contato</a>
-            <a href="sobre.html">Sobre</a>
+                <div class="descricaoEsquerda">
+                    <div class="eventoss">
+
+                        <h2>Eventos</h2>
+                        <a href="#">Agendamento</a>
+                        <a href="#">Lista de Agendas</a>
+                        <a href="#">Cadastro Clientes</a>
+                    </div>
+
+                    <div class="eventoss">
+                        <h2>Planos</h2>
+                        <a href="#">Pagamento</a>
+                        <a href="#">Ver Planos</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="esquerda">
+                <h2 class="textoFooter">APLICATIVOS</h2>
+
+                <div class="descricaoEsquerda">
+                    <div class="apps">
+                        <div class="topos">
+                            <a href="https://www.instagram.com/">
+                                <img src="instagram.svg" alt="">
+                            </a>
+
+                            <a href="https://www.facebook.com/?locale=pt_BR">
+                                <img src="facebook.svg" alt="">
+                            </a>
+
+                            <a href="https://web.whatsapp.com/">
+                                <img src="whatsapp.svg" alt="">
+                            </a>
+                        </div>
+
+                        <h4 id="arolba">@agendamento_sala+</h4>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <p class="footer-copy">© 2025 EVENTO+ - Todos os direitos reservados.</p>
-    </div>
-</footer>
+    </footer>
 
     <script src="cliente.js"></script>
 </body>

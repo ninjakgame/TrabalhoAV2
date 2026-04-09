@@ -1,9 +1,9 @@
-/* CONFIGURAÇÃO GERAL */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 
 html, body {
     height: 100%;
@@ -12,11 +12,10 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ocupa toda a tela */
+    min-height: 100vh; 
     font-family: Arial, sans-serif;
 }
 
-/* HEADER */
 header {
     display: flex;
     align-items: center;
@@ -34,10 +33,9 @@ header {
 main {
     flex: 1;
     background-color: rgb(213, 213, 213);
-    padding-top: 70px; /* para não ficar escondido atrás do header */
+    padding-top: 70px; 
 }
 
-/* FOOTER */
 footer {
     padding: 10px;
     background-color: #4CC9F0;
@@ -46,7 +44,6 @@ footer {
     font-size: 22px;
 }
 
-/* LINK */
 a {
     text-decoration: none;
     font-size: 20px;
@@ -57,13 +54,12 @@ a:hover {
     color: #f26a8d;
 }
 
-/* CONTEÚDO PRINCIPAL */
 main {
-    flex: 1; /* Ocupa o espaço entre HEADER e FOOTER */
+    flex: 1; 
     background-color: rgb(213, 213, 213);
 }
 
-/* SEÇÃO EMPRESA */
+
 .empresa {
     display: flex;
     align-items: center;
@@ -116,7 +112,6 @@ span {
     }
 }
 
-/* AVALIAÇÕES */
 .avaliacao {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -156,7 +151,6 @@ h2, h3 {
     text-align: center;
 }
 
-/* Seção de dúvidas (FAQ) */
 .duvidas {
     padding: 40px;
 }
@@ -225,11 +219,19 @@ h2, h3 {
 
 .scroll-animacao {
     opacity: 0;
-    transform: translateY(50px); /* Começa deslocado para baixo */
+    transform: translateY(50px); 
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .scroll-animacao.mostrar {
     opacity: 1;
-    transform: translateY(0); /* Vai para o lugar normal */
+    transform: translateY(0); 
 }
+
+
+.sala{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+}
+
+

@@ -83,13 +83,29 @@ document.querySelectorAll("input, select").forEach(campo => {
     });
 });
 
+// CPF com máscara
 document.getElementById("cpf").addEventListener("input", function () {
-    this.value = this.value.replace(/\D/g, ""); // Remove tudo que não for número
+    let valor = this.value.replace(/\D/g, "");
+
+    if (valor.length > 11) valor = valor.slice(0, 11);
+
+    valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
+    valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
+    valor = valor.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+
+    this.value = valor;
 });
 
-// Permitir somente números Telefone
+// Telefone com máscara
 document.getElementById("telefone").addEventListener("input", function () {
-    this.value = this.value.replace(/\D/g, ""); // Remove tudo que não for número
+    let valor = this.value.replace(/\D/g, "");
+
+    if (valor.length > 11) valor = valor.slice(0, 11);
+
+    valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2");
+    valor = valor.replace(/(\d{5})(\d)/, "$1-$2");
+
+    this.value = valor;
 });
 
 // Permitir somente números Telefone

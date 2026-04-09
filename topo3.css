@@ -22,7 +22,6 @@ header{
     align-items: center;
     justify-content: space-between;
     font-weight: 700;
-    width: 100%;
 }
 
 .conteudoBaixo{
@@ -125,12 +124,6 @@ span{
 a{
     text-decoration: none;
     color: white;
-}
-
-.topo{
-    display: flex;
-    align-items: center;
-    width: 100%;
 }
 
 .links{
