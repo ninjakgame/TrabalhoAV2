@@ -21,6 +21,37 @@ function limparErro(campo) {
     campo.classList.remove("error");
 }
 
+// ================= VALIDAÇÃO EM BLUR =================
+
+// 🔹 NOME
+nomeInput.addEventListener("blur", function () {
+    if (this.value.trim() === "") {
+        marcarErro(this);
+    } else {
+        limparErro(this);
+    }
+});
+
+// 🔹 EMAIL
+emailInput.addEventListener("blur", function () {
+    const email = this.value.trim();
+
+    if (!email.includes("@") || !email.includes(".")) {
+        marcarErro(this);
+    } else {
+        limparErro(this);
+    }
+});
+
+// 🔹 SENHA
+senhaInput.addEventListener("blur", function () {
+    if (this.value.length < 6) {
+        marcarErro(this);
+    } else {
+        limparErro(this);
+    }
+});
+
 // ================= CEP =================
 
 // 🔥 máscara CEP
@@ -122,14 +153,6 @@ senhaInput.addEventListener("input", function () {
         <p class="${temSimbolo ? 'ok' : 'erro'}">Símbolo</p>
         <p class="${tamanho ? 'ok' : 'erro'}">Mínimo 6 caracteres</p>
     `;
-
-    senha.addEventListener("blur", function () {
-    if (!validarTelefone(this.value)) {
-        marcarErro(this);
-    } else {
-        limparErro(this);
-    }
-});
 });
 
 // ================= CPF =================
@@ -278,16 +301,14 @@ function validarForm() {
         return false;
     }
 
-    const email = emailInput.value.toLowerCase();
+    const email = emailInput.value.trim();
 
-    const emailValido = dominiosPermitidos.some(d => email.endsWith(d));
-
-    if (!emailValido) {
-        marcarErro(emailInput);
-        emailInput.focus();
-        alert("Use Gmail, Hotmail, Outlook ou empresa.com!");
-        return false;
-    }
+if (!email.includes("@") || !email.includes(".")) {
+    marcarErro(emailInput);
+    emailInput.focus();
+    alert("Digite um email válido!");
+    return false;
+}
 
     // 3️⃣ Senha
     if (senhaInput.value.length < 6) {

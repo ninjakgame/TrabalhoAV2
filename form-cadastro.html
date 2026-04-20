@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Principal</title>
+    <title>SALA+</title>
+    <link rel="shortcut icon" href="agendamento.png" type="image/x-icon">
     <link rel="stylesheet" href="stylePrincipal.css">
-    <link rel="stylesheet" href="paginaInicial2.css">
     <link rel="stylesheet" href="topo3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 
 <body>
-     <header>
+    <header>
         <div class="topo">
             <div class="conteudoTopo">
                 <h2 class="logo"><a href="paginaInicial.html">SALA+</a></h2>
@@ -28,81 +28,70 @@
     </header>
 
     <div class="containerTabela">
-        <div class="nome">
-            <h1 class="nomeTabela">TABELA DE AGENDAMENTO</h1>
-        </div>
-
+      <h1>Tabela de Agendamentos</h1>
         <div class="butao">
-            <button onclick="criar()" id="criar">Criar</button>
-            <button onclick="editar()" id="editar">Editar</button>
+            <button onclick="criar()">Criar</button>
+            <button onclick="editarSelecionado()" id="editar">Editar</button>
         </div>
 
-        <table>
+
+        <table border="1">
             <thead>
                 <tr>
+                    <th>BOX</th>
                     <th>ID</th>
                     <th>NOME</th>
                     <th>EMAIL</th>
                     <th>AGENDAMENTO</th>
+                    <th>DATA</th>
                     <th>STATUS</th>
                     <th>EXCLUIR</th>
                 </tr>
             </thead>
 
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Joao</td>
-                    <td>JoaoPedro@gmail.com</td>
-                    <td>Reunião</td>
-                    <td>
-                        <select>
-                            <option value="agendamento">Agendamento</option>
-                            <option value="na_lista">Na lista</option>
-                            <option value="cancelado">Cancelado</option>
-                        </select>
-                    </td>
-                    <td>
-                        <button class="excluir">X</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>2</td>
-                    <td>Pedro Fabricio</td>
-                    <td>Pedro12@gmail.com</td>
-                    <td>Aula</td>
-                    <td>
-                        <select>
-                            <option value="agendamento">Agendamento</option>
-                            <option value="na_lista">Na lista</option>
-                            <option value="cancelado">Cancelado</option>
-                        </select>
-                    </td>
-                    <td>
-                        <button class="excluir">X</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>3</td>
-                    <td>Leandro</td>
-                    <td>Leogamer2025@gmail.com</td>
-                    <td>Evento</td>
-                    <td>
-                        <select>
-                            <option value="agendamento">Agendamento</option>
-                            <option value="na_lista">Na lista</option>
-                            <option value="cancelado">Cancelado</option>
-                        </select>
-                    </td>
-                    <td>
-                        <button class="excluir">X</button>
-                    </td>
-                </tr>
-            </tbody>
+            <tbody id="tbody"></tbody>
         </table>
 
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-conteudo">
+
+            <div class="modal-header">
+                <h2>Detalhes do Cliente</h2>
+                <span class="fechar" onclick="fecharModal()">×</span>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="campo">
+                    <label>Nome</label>
+                    <span id="mNome"></span>
+                </div>
+
+                <div class="campo">
+                    <label>Email</label>
+                    <span id="mEmail"></span>
+                </div>
+
+                <div class="campo">
+                    <label>Agendamento</label>
+                    <span id="mAgenda"></span>
+                </div>
+
+                <div class="campo">
+                    <label>Data</label>
+                    <span id="mData"></span>
+                </div>
+
+                <div class="campo">
+                    <label>Status</label>
+                    <span id="mStatus" class="status"></span>
+                </div>
+
+            </div>
+
+        </div>
     </div>
 
     <footer>
