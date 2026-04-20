@@ -1,86 +1,108 @@
-// Define a data mínima (hoje) para o agendamento - fora da função
 document.addEventListener("DOMContentLoaded", function () {
-    const hoje = new Date().toISOString().split('T')[0];
-    document.getElementById("dataAgendamento").setAttribute("min", hoje);
 
-    // Transformar o nome automaticamente para MAIÚSCULO enquanto digita
+    const hoje = new Date();
+    const dataMin = hoje.toISOString().split('T')[0];
+
+    const dataMaxObj = new Date();
+    dataMaxObj.setFullYear(dataMaxObj.getFullYear() + 1);
+    const dataMax = dataMaxObj.toISOString().split('T')[0];
+
+    const dataInput = document.getElementById("dataAgendamento");
+
+    if (dataInput) {
+        dataInput.setAttribute("min", dataMin);
+        dataInput.setAttribute("max", dataMax);
+    }
+
     const nomeInput = document.getElementById("nome");
-    nomeInput.addEventListener("input", function () {
-        this.value = this.value.toUpperCase();
-    });
+    if (nomeInput) {
+        nomeInput.addEventListener("input", function () {
+            this.value = this.value.toUpperCase();
+        });
+    }
+
+    // carregar edição
+    const editarId = localStorage.getItem("editarId");
+
+    if (editarId) {
+        let lista = JSON.parse(localStorage.getItem("cadastros")) || [];
+
+        const item = lista.find(i => i.id == editarId);
+
+        if (item) {
+            document.getElementById("nome").value = item.nome;
+            document.getElementById("email").value = item.email;
+            document.getElementById("agenda").value = item.agendamento || "";
+            document.getElementById("dataAgendamento").value = item.data || "";
+        }
+    }
 });
 
 function validarSenha() {
-    const nomeInput = document.getElementById("nome");
-    const emailInput = document.getElementById("email");
-    const senhaInput = document.getElementById("senha");
-    const confirmarInput = document.getElementById("confirmarSenha");
-    const agendaInput = document.getElementById("agenda");
-    const dataInput = document.getElementById("dataAgendamento");
 
-    // Função para destacar o campo com foco e borda vermelha
-    function destacarCampo(campo) {
-        campo.focus();
-        if (campo.value == "") {
-            campo.classList.add("error");
-        } else {
-            campo.classList.remove("error");
+    let lista = JSON.parse(localStorage.getItem("cadastros")) || [];
+
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const agenda = document.getElementById("agenda").value;
+    const data = document.getElementById("dataAgendamento").value;
+
+    const editarId = localStorage.getItem("editarId");
+
+    if (!agenda) {
+        alert("Escolha um tipo de agendamento!");
+        return false;
+    }
+
+    if (editarId) {
+        // 🔥 EDITAR
+        const index = lista.findIndex(i => i.id == editarId);
+
+        if (index !== -1) {
+            lista[index].nome = nome;
+            lista[index].email = email;
+            lista[index].agendamento = agenda;
+            lista[index].data = data;
         }
+
+        localStorage.removeItem("editarId");
+
+    } else {
+        // 🔥 CRIAR NOVO (caso use a mesma tela)
+        const novo = {
+            id: Date.now(),
+            nome,
+            email,
+            agendamento: agenda,
+            data,
+            status: "Agendamento"
+        };
+
+        lista.push(novo);
     }
 
-    // Remove erro ao digitar
-    document.querySelectorAll("input, select").forEach(campo => {
-        campo.addEventListener("input", () => {
-            if (campo.value !== "") {
-                campo.classList.remove("error");
-            }
-        });
-    });
+    const dataSelecionada = new Date(data + "T00:00:00");
+    const hoje = new Date();
+    hoje.setHours(0, 0, 0, 0);
 
-    if (nomeInput.value === "") {
-        alert("Você esqueceu de colocar o seu nome!");
-        destacarCampo(nomeInput);
+    const limiteMax = new Date();
+    limiteMax.setFullYear(hoje.getFullYear() + 1);
+
+    // ❌ menor que hoje
+    if (dataSelecionada < hoje) {
+        alert("Não pode escolher uma data passada!");
         return false;
     }
 
-    if (emailInput.value === "") {
-        alert("Você esqueceu de colocar o email!");
-        destacarCampo(emailInput);
+    // ❌ maior que 1 ano
+    if (dataSelecionada > limiteMax) {
+        alert("Você só pode agendar até 1 ano à frente!");
         return false;
     }
 
-    if (senhaInput.value === "") {
-        alert("Você esqueceu de colocar a senha!");
-        destacarCampo(senhaInput);
-        return false;
-    }
+    localStorage.setItem("cadastros", JSON.stringify(lista));
 
-    if (confirmarInput.value === "") {
-        alert("Você esqueceu de confirmar a senha!");
-        destacarCampo(confirmarInput);
-        return false;
-    }
+    window.location.href = "form-cadastro.html";
 
-    if (senhaInput.value !== confirmarInput.value) {
-        alert("As senhas não são iguais!");
-        destacarCampo(confirmarInput);
-        return false;
-    }
-
-    if (agendaInput.value === "escolha") {
-        alert("Por favor, selecione uma opção de agendamento!");
-        destacarCampo(agendaInput);
-        return false;
-    }
-
-    // Verificação da data
-    const hoje = new Date().toISOString().split('T')[0];
-    if (dataInput.value < hoje) {
-        alert("A data do agendamento não pode ser anterior à data atual!");
-        destacarCampo(dataInput);
-        return false;
-    }
-
-    alert("Cadastro realizado com sucesso!");
-    return true;
+    return false;
 }

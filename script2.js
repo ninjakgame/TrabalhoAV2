@@ -1,91 +1,96 @@
-document.addEventListener("DOMContentLoaded", function () {
+let selecionado = null;
 
-    // Botões de excluir linhas
-    document.querySelectorAll(".excluir").forEach(botao => {
-        botao.addEventListener("click", function () {
-            this.closest("tr").remove();
-        });
+document.addEventListener("DOMContentLoaded", carregarTabela);
+
+function criar() {
+    window.location.href = "criar.html";
+}
+
+function carregarTabela() {
+    const tbody = document.getElementById("tbody");
+    tbody.innerHTML = "";
+
+    let lista = JSON.parse(localStorage.getItem("cadastros")) || [];
+
+    lista.forEach((item, index) => {
+        let linha = `
+        <tr>
+            <td><input type="radio" name="select" onclick="selecionado = ${item.id}"></td>
+            <td>${index + 1}</td>
+            <td>${item.nome}</td>
+            <td>${item.email}</td>
+            <td>${item.agendamento || "-"}</td>
+            <td>${item.horario}</td>
+            <td>${formatarData(item.data)}</td>
+
+            <td>
+                <span class="status 
+                    ${item.status === "Agendamento" ? "agendamento" : ""}
+                    ${item.status === "Na lista" ? "lista" : ""}
+                    ${item.status === "Cancelado" ? "cancelado" : ""}
+                ">
+                    ${item.status}
+                </span>
+            </td>
+
+            <td>
+                <button onclick="ver(${item.id})">Ver</button>
+                <button onclick="excluir(${item.id})">X</button>
+            </td>
+        </tr>
+        `;
+
+        tbody.innerHTML += linha;
     });
+}
 
-    // Remover erro ao digitar
-    document.querySelectorAll("input, select").forEach(campo => {
-        campo.addEventListener("input", () => campo.classList.remove("error"));
-    });
-});
+function ver(id) {
+    let lista = JSON.parse(localStorage.getItem("cadastros"));
+    
+    const item = lista.find(i => i.id === id);
 
-function validarSenha(event) {
-    event.preventDefault();
+    document.getElementById("mNome").innerText = item.nome;
+    document.getElementById("mEmail").innerText = item.email;
+    document.getElementById("mAgenda").innerText = item.agendamento || "-";
+    document.getElementById("mHorario").innerText = item.horario;
+    document.getElementById("mData").innerText = formatarData(item.data);
+    document.getElementById("mStatus").innerText = item.status;
 
-    const nomeInput = document.getElementById("nome");
-    const emailInput = document.getElementById("email");
-    const senhaInput = document.getElementById("senha");
-    const confirmarInput = document.getElementById("confirmarSenha");
-    const check = document.getElementById("confirmacao");
-    const agendaInput = document.getElementById("eventos");
-    const label = document.getElementById("labelConfirmacao");
+    const statusEl = document.getElementById("mStatus");
+    statusEl.className = "status";
 
-    let formularioValido = true;
-    let mensagem = "";
+    if (item.status === "Agendamento") statusEl.classList.add("agendamento");
+    if (item.status === "Na lista") statusEl.classList.add("lista");
+    if (item.status === "Cancelado") statusEl.classList.add("cancelado");
 
-    function destacarCampo(campo) {
-        campo.classList.add("error");
-        campo.focus();
-        formularioValido = false;
-    }
+    document.getElementById("modal").style.display = "block";
+}
 
-    // --- VALIDAÇÕES ---
-    if (nomeInput.value === "") {
-        mensagem = "Você esqueceu de colocar o seu nome!";
-        destacarCampo(nomeInput);
-    }
-    else if (emailInput.value === "") {
-        mensagem = "Você esqueceu de colocar o email!";
-        destacarCampo(emailInput);
-    }
-    else if (senhaInput.value === "") {
-        mensagem = "Você esqueceu de colocar a senha!";
-        destacarCampo(senhaInput);
-    }
-    else if (confirmarInput.value === "") {
-        mensagem = "Você esqueceu de confirmar a senha!";
-        destacarCampo(confirmarInput);
-    }
-    else if (senhaInput.value !== confirmarInput.value) {
-        mensagem = "A senha e a confirmação não são iguais!";
-        destacarCampo(confirmarInput);
-    }
-    else if (agendaInput.value === "escolha") {   // ⬅️ AGORA FUNCIONA!!
-        mensagem = "Você precisa escolher uma opção de evento!";
-        destacarCampo(agendaInput);
-    }
-    else if (!check.checked) {
-        mensagem = "Você precisa aceitar os termos para continuar.";
-        check.classList.add("checkErro");
-        label.classList.add("checkErro");
-        formularioValido = false;
-    }
+function fecharModal() {
+    document.getElementById("modal").style.display = "none";
+}
 
-    // tirar erro ao marcar checkbox
-    check.addEventListener("change", () => {
-        if (check.checked) {
-            check.classList.remove("checkErro");
-            label.classList.remove("checkErro");
-        }
-    });
+function excluir(id) {
+    let lista = JSON.parse(localStorage.getItem("cadastros"));
 
-    if (!formularioValido) {
-        alert(mensagem);
+    lista = lista.filter(item => item.id !== id);
+
+    localStorage.setItem("cadastros", JSON.stringify(lista));
+    carregarTabela();
+}
+
+function editarSelecionado() {
+    if (selecionado == null) {
+        alert("Selecione um registro!");
         return;
     }
 
-    alert("Formulário enviado com sucesso!");
-    document.querySelector("form").submit();
+    localStorage.setItem("editarId", selecionado);
+    window.location.href = "editar.html";
 }
 
-function criar(){
- window.location.href = "criar.html";
- }
- 
- function editar(){
- window.location.href = "editar.html";
- }
+function formatarData(data) {
+    if (!data) return "";
+    const d = new Date(data);
+    return d.toLocaleDateString("pt-BR");
+}

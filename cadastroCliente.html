@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Do Cliente</title>
+    <title>SALA+</title>
+    <link rel="shortcut icon" href="agendamento.png" type="image/x-icon">
     <link rel="stylesheet" href="cliente.css">
     <link rel="stylesheet" href="paginaInicial2.css">
     <link rel="stylesheet" href="topo3.css">
@@ -30,46 +31,26 @@
     <section>
         <h1>Cadastro do Cliente</h1>
 
-        <form action="form-cadastro.html" onsubmit="return validarSenha()">
-            <h2>Contato do Cliente</h2>
+        <form onsubmit="return validarForm()">
 
-            <input type="text" name="nome" id="nome" required placeholder="Usuario">
+            <input type="text" id="nome" placeholder="Usuário">
+            <input type="email" id="email" placeholder="E-mail">
+            <input type="password" id="senha" placeholder="Senha">
 
-            <input type="email" name="email" id="email" required placeholder="E-mail">
-
-            <input type="password" name="senha" id="senha" required placeholder="Senha">
-
-            <div class="number">
-
-                <input type="text" name="cpf" id="cpf" maxlength="14" required placeholder="CPF">
-
-                <input type="text" name="telefone" id="telefone" maxlength="15" required placeholder="Telefone">
-
+            <div class="barra-container">
+                <div id="barraSenha"></div>
             </div>
 
-            <h2>Endereço Completo</h2>
-            <input type="text" name="rua" id="rua" placeholder="Rua">
+            <div id="forcaSenha"></div>
+            <div id="requisitosSenha"></div>
 
-            <input type="text" name="numero" id="numero" maxlength="4" placeholder="Numero do Local">
+            <input type="text" id="cpf" placeholder="CPF">
+            <input type="text" id="telefone" placeholder="Telefone">
+            <input type="text" id="cep" placeholder="CEP">
 
-            <input type="text" name="cidade" id="cidade" maxlength="10" placeholder="Cidade">
+            <div id="infoCep"></div>
 
-            <select name="estado" id="estado">
-                <option value="escolha" selected disabled>Escolha o seu Estado</option>
-                <option value="AC">AC</option>
-                <option value="AL">AL</option>
-                <option value="BA">BA</option>
-                <option value="CE">CE</option>
-                <option value="ES">ES</option>
-                <option value="GO">GO</option>
-                <option value="MT">MT</option>
-                <option value="MG">MG</option>
-                <option value="PR">PR</option>
-            </select>
-
-            <input type="text" name="cep" id="cep" maxlength="8" placeholder="Cep">
-
-            <button type="submit" onclick="return validarSenha()">Cadastrar</button>
+            <button type="submit">Cadastrar</button>
 
         </form>
     </section>
@@ -122,6 +103,16 @@
             </div>
         </div>
     </footer>
+
+    <!-- MODAL -->
+    <div id="modalEscolha" class="modal">
+        <div class="modal-box">
+            <h2>O que deseja fazer?</h2>
+            <button onclick="acaoWhats()">Enviar via WhatsApp</button>
+            <button onclick="acaoTabela()">Ver Tabela</button>
+            <button class="fechar" onclick="fecharModal()">Cancelar</button>
+        </div>
+    </div>
 
     <script src="cliente.js"></script>
 </body>

@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Conta</title>
+    <title>SALA+</title>
+    <link rel="shortcut icon" href="agendamento.png" type="image/x-icon">
     <link rel="stylesheet" href="criar.css">
     <link rel="stylesheet" href="topo3.css">
-    <link rel="stylesheet" href="paginaInicial2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-   <header>
+    <header>
         <div class="topo">
             <div class="conteudoTopo">
                 <h2 class="logo"><a href="paginaInicial.html">SALA+</a></h2>
@@ -32,26 +32,17 @@
 
             <form action="form-cadastro.html" onsubmit="return validarSenha()">
 
-                <label for="nome">Nome</label>
-                <input type="text" name="nome" id="nome" required value="Pedro Gamer2025">
-
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" required value="Gamer@gmail.com">
-
-                <label for="senha">Senha</label>
-                <input type="password" name="senha" id="senha" required value="Pedro_2025">
-
-                <label for="confirmarSenha">Confirmação da Senha</label>
-                <input type="password" name="confirmarSenha" id="confirmarSenha" required value="Pedro_2025">
-
-                <label for="agenda">Agenda</label>
-                <select name="agenda" id="agenda" required>
-                    <option value="escolha" disabled>Escolha seu Agendamento Aqui</option>
-                    <option value="reuniao" selected>Reuniao</option>
-                    <option value="aula">Aula</option>
-                    <option value="evento">Evento</option>
-                    <option value="outra">Outras Atividades</option>
+                <input type="text" id="nome">
+                <input type="email" id="email">
+                <select id="agenda" required>
+                    <option value="">Escolha</option>
+                    <option value="Reunião">Reunião</option>
+                    <option value="Aula">Aula</option>
+                    <option value="Evento">Evento</option>
                 </select>
+                <input type="date" id="dataAgendamento">
+
+
 
                 <button type="submit">Salvar</button>
 
@@ -59,7 +50,7 @@
         </div>
     </div>
 
-   <footer>
+    <footer>
         <div class="containerFooter">
             <div class="esquerdo">
                 <h2 class="textoFooter">SALA+</h2>

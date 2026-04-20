@@ -72,3 +72,300 @@ input.error, select.error {
     background-color: #ffe6e6;
     transition: 0.3s;
 }
+
+main{
+    padding: 40px;
+}
+
+.containerPlanos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.animacao{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.animacao.ativo{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.texto{
+    cursor: default;
+}
+
+.cardsPlanos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    gap: 80px;
+    padding: 60px;
+}
+
+.planos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+    box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    padding: 40px;
+    font-size: 20px;
+    transition: transform 0.4s ease-in;
+    cursor: default;
+}
+
+.planos:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 8px 10px rgba(76, 0, 255, 0.135);
+}
+
+.planoBascio{
+    color: blue;
+}
+
+.planoIntermediario{
+    color: #CCB507;
+}
+
+.planoPremium{
+    color: #c62020;
+}
+
+.containerAvaliação{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 60px;
+}
+
+.cardDescricao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.cardsAvaliacao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #7E3FC2;
+    border-radius: 8px;
+    transition: transform 0.6s ease;
+}
+
+.cardsAvaliacao:hover{
+    transform: scale(1.08);
+}
+
+.nomePessoa{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    color: white;
+}
+
+.estrelas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.textoPessoa{
+    font-size: 24px;
+    color: white;
+    font-weight: 600;
+}
+
+.imagemEstrela{
+    width: 40px;
+}
+
+.texto{
+    text-align: center;
+    padding: 80px;
+    font-size: 50px;
+}
+
+.maisConteudo{
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.containerDuvidas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.boxDuvida{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid gray;
+    border-radius: 10px;
+    font-size: 30px;
+    padding: 20px;
+}
+
+.seta{
+    width: 50px;
+}
+
+.cardsDuvidas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+.boxDuvida{
+    cursor: pointer;
+}
+
+footer{
+    background: url("Rectangle\ 8.jpg");
+    background-size: cover;
+    color: white;
+    font-size: 24px;
+    padding: 20px;
+}
+
+.textoFooter{
+    cursor: default;
+}
+
+.containerFooter{
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    padding: 20px 180px 0 0;
+}
+
+.esquerdo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+}
+
+.descricaoEsquerda{
+    display: flex;
+    gap: 60px;
+}
+
+.eventoss{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.esquerda{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.apps{
+    display: flex;
+    flex-direction: column;
+    gap: 65px;
+}
+
+.ap{
+    width: 100%;
+    max-width: 30%;
+    padding: 0 40px;
+}
+
+.topos{
+    display: flex;
+    gap: 30px;
+}
+
+#arolba{
+    text-align: center;
+}
+
+.textoFooter{
+    text-align: center;
+}
+
+
+
+
+.item {
+    width: 50%;
+  margin: 20px auto;
+  border: 1px solid #4f4f4f;
+  border-radius: 10px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* PERGUNTA */
+.pergunta {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+  align-items: center;
+}
+
+/* RESPOSTA */
+.resposta {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.4s ease;
+  padding: 0 20px;
+  text-align: left;
+}
+
+/* QUANDO ABRE */
+.item.ativo .resposta {
+  max-height: 120px;
+  padding: 20px;
+}
+
+/* VER MAIS */
+.ver-mais {
+  margin-top: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.extra {
+  display: none;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.extra.mostrar {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.item.ativo .seta {
+  transform: rotate(180deg);
+  transition: 0.3s;
+}
+
