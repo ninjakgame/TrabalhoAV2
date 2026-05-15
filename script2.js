@@ -20,7 +20,6 @@ function carregarTabela() {
             <td>${item.nome}</td>
             <td>${item.email}</td>
             <td>${item.agendamento || "-"}</td>
-            <td>${item.horario}</td>
             <td>${formatarData(item.data)}</td>
 
             <td>
@@ -46,13 +45,11 @@ function carregarTabela() {
 
 function ver(id) {
     let lista = JSON.parse(localStorage.getItem("cadastros"));
-    
     const item = lista.find(i => i.id === id);
 
     document.getElementById("mNome").innerText = item.nome;
     document.getElementById("mEmail").innerText = item.email;
     document.getElementById("mAgenda").innerText = item.agendamento || "-";
-    document.getElementById("mHorario").innerText = item.horario;
     document.getElementById("mData").innerText = formatarData(item.data);
     document.getElementById("mStatus").innerText = item.status;
 

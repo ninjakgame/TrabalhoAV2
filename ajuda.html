@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SALA+</title>
     <link rel="shortcut icon" href="agendamento.png" type="image/x-icon">
+    <link rel="stylesheet" href="paginaInicial2.css">
+    <link rel="shortcut icon" href="agendamento.png" type="image/x-icon">
     <link rel="stylesheet" href="topo3.css">
+    <link rel="stylesheet" href="suporte.css">
+    <link rel="stylesheet" href="ajuda.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
+
     <header>
         <div class="topo">
             <div class="conteudoTopo">
@@ -23,11 +30,122 @@
         </div>
     </header>
 
-    <div class="manutencao">
-        <img src="manuntencao.avif" alt="manutenção do site">
-        
-        <h1>Manutenção</h1>
-    </div>
-    
+    <main>
+        <div class="container">
+            <h2>SUPORTE DE <span>AGENDAMENTO</span></h2>
+
+            <div class="gridMolde">
+                <div class="box">
+                    <img src="whats.png">
+
+                    <h2>FALE NO WHATSAPP</h2>
+                </div>
+
+                <div class="box">
+                    <img src="email.png">
+
+                    <h2>ENVIAR E-MAIL</h2>
+                </div>
+
+                <div class="box">
+                    <img src="telefone.png">
+
+                    <h2>LIGAR</h2>
+                </div>
+            </div>
+        </div>
+
+        <section class="duvidas">
+            <div class="cardsDuvidas">
+
+                <div class="item">
+                    <div class="pergunta">
+                        <p>📅 Como agendar um evento?</p>
+                        <img src="seta.svg" class="seta">
+                    </div>
+                    <div class="resposta">
+                        <p>Você pode agendar pelo botão "Agendar Agora".</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="pergunta">
+                        <p>📲 Como editar meus dados?</p>
+                        <img src="seta.svg" class="seta">
+                    </div>
+                    <div class="resposta">
+                        <p>Temos básico, intermediário e premium.</p>
+                    </div>
+                </div>
+
+                <!-- ESCONDIDOS -->
+                <div class="item extra">
+                    <div class="pergunta">
+                        <p>🔐 Esqueci minha senha</p>
+                        <img src="seta.svg" class="seta">
+                    </div>
+                    <div class="resposta">
+                        <p>Sim, pode cancelar quando quiser.</p>
+                    </div>
+                </div>
+
+                <p class="ver-mais">VER MAIS</p>
+            </div>
+        </section>
+
+        <section class="boxSuporte">
+            <div class="esquerda">
+                 <img src="suporte.png" id="suporte">
+                 
+                 <h2>INSIRA SEUS DADOS AQUI</h2>
+            </div>
+            
+            <div class="direta">
+                <input type="text" id="nome" placeholder="USUARIO" required>
+
+                <input type="email" id="email" placeholder="EMAIL" required>
+
+                <input type="text" id="mensagem" placeholder="MENSAGEM" required>
+
+                <button type="submit" onclick="enviar()">Enviar</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="containerFooter">
+            <div class="esquerdo">
+                <h2 class="textoFooter">SALA+</h2>
+            </div>
+
+
+            <div class="esquerda">
+                <h2 class="textoFooter">APLICATIVOS</h2>
+
+                <div class="descricaoEsquerda">
+                    <div class="apps">
+                        <div class="topos">
+                            <a href="https://www.instagram.com/">
+                                <img src="instagram.svg" alt="">
+                            </a>
+
+                            <a href="https://www.facebook.com/?locale=pt_BR">
+                                <img src="facebook.svg" alt="">
+                            </a>
+
+                            <a href="https://web.whatsapp.com/">
+                                <img src="whatsapp.svg" alt="">
+                            </a>
+                        </div>
+
+                        <h4 id="arolba">@agendamento_sala+</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="paginaInicial.js"></script>
 </body>
+
 </html>

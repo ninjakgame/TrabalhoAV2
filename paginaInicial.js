@@ -28,7 +28,7 @@ elementos.forEach(elemento => observer.observe(elemento));
 */
 
 function agendar(){
-    window.location.href = 'login.html';
+    window.location.href = 'login.php';
 }
 
 
@@ -73,3 +73,17 @@ function agora(){
 
 window.addEventListener('scroll', animarScroll);
 window.addEventListener('load', animarScroll);
+
+function enviar(){
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const mensagem = document.getElementById("mensagem").value;
+
+    if(nome === "" || email === "" || mensagem === ""){
+        alert("Você esqueceu de colocar o nome, email ou a mensagem");
+        return;
+    } else {
+        alert("Enviado com sucesso para " + email);
+        window.location.href = "paginaInicial.html";
+    }
+}

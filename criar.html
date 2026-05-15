@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Conta</title>
+    <title>SALA+</title>
+    <link rel="shortcut icon" href="agendamento.png" type="image/x-icon">
     <link rel="stylesheet" href="criar.css">
     <link rel="stylesheet" href="topo3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -30,51 +31,75 @@
         <div class="container">
             <h2>CRIAR CONTA</h2>
 
-            <form action="form-cadastro.html">
-                <label for="nome">Nome</label>
-                <input type="text" name="nome" id="nome" required placeholder="Usuario123">
+            <form id="formCadastro" onsubmit="return validarSenha()">
+                <input type="text" id="nome" placeholder="Nome"
+                    required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="senha" placeholder="Senha" required>
+                <input type="password" id="confirmarSenha" placeholder="Confirmar senha" required>
 
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" required placeholder="Exemplo@gmail.com">
-
-                <label for="senha">Senha</label>
-                <input type="password" name="senha" id="senha" required placeholder="Senha123">
-
-                <label for="confirmarSenha">Confirmação da Senha</label>
-                <input type="password" name="confirmarSenha" id="confirmarSenha" required placeholder="Senha123">
-
-                <label for="agenda">Agenda</label>
-                <select name="agenda" id="agenda" required>
-                    <option value="escolha" selected disabled>Escolha seu Agendamento Aqui</option>
-                    <option value="reuniao">Reunião</option>
-                    <option value="aula">Aula</option>
-                    <option value="evento">Evento</option>
-                    <option value="outra">Outras Atividades</option>
+                <select id="agenda" required>
+                    <option value="">Escolha</option>
+                    <option value="Reunião">Reunião</option>
+                    <option value="Aula">Aula</option>
+                    <option value="Evento">Evento</option>
                 </select>
 
-                <label for="dataAgendamento">Dia do Agendamento</label>
-                <input type="date" name="dataAgendamento" id="dataAgendamento" required>
+                <input type="date" id="dataAgendamento" required>
 
-                <button type="submit" onclick="return validarSenha()">Criar</button>
+                <button type="submit">Criar</button>
             </form>
         </div>
     </div>
 
-    <footer class="footer">
-    <div class="footer-content">
-        <h3>EVENTO+</h3>
-        <p>Organizando eventos com facilidade e rapidez.</p>
+    <footer>
+        <div class="containerFooter">
+            <div class="esquerdo">
+                <h2 class="textoFooter">SALA+</h2>
 
-        <div class="footer-links">
-            <a href="#">Início</a>
-            <a href="eventos.html">Agendar Evento</a>
-            <a href="ajuda.html">Contato</a>
-            <a href="sobre.html">Sobre</a>
+                <div class="descricaoEsquerda">
+                    <div class="eventoss">
+
+                        <h2>Eventos</h2>
+                        <a href="#">Agendamento</a>
+                        <a href="#">Lista de Agendas</a>
+                        <a href="#">Cadastro Clientes</a>
+                    </div>
+
+                    <div class="eventoss">
+                        <h2>Planos</h2>
+                        <a href="#">Pagamento</a>
+                        <a href="#">Ver Planos</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="esquerda">
+                <h2 class="textoFooter">APLICATIVOS</h2>
+
+                <div class="descricaoEsquerda">
+                    <div class="apps">
+                        <div class="topos">
+                            <a href="https://www.instagram.com/">
+                                <img src="instagram.svg" alt="">
+                            </a>
+
+                            <a href="https://www.facebook.com/?locale=pt_BR">
+                                <img src="facebook.svg" alt="">
+                            </a>
+
+                            <a href="https://web.whatsapp.com/">
+                                <img src="whatsapp.svg" alt="">
+                            </a>
+                        </div>
+
+                        <h4 id="arolba">@agendamento_sala+</h4>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <p class="footer-copy">© 2025 EVENTO+ - Todos os direitos reservados.</p>
-    </div>
-</footer>
+    </footer>
 
     <script src="criar.js"></script>
 </body>
