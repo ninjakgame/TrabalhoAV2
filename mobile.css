@@ -1,0 +1,197 @@
+/* =========================
+   MOBILE RESPONSIVO
+========================= */
+
+@media (max-width: 1200px){
+
+    /* GERAL */
+    *{
+        overflow-x: hidden;
+    }
+
+    body{
+        width: 100%;
+    }
+
+    main{
+        padding: 20px;
+    }
+
+    /* HEADER */
+    header{
+        padding: 20px;
+        font-size: 20px;
+    }
+
+    .conteudoTopo{
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .links{
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .conteudoBaixo{
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .descricao{
+        font-size: 28px;
+    }
+
+    #imagemEvento{
+        width: 100%;
+    }
+
+    .agendamentoAgora{
+        font-size: 20px;
+        padding: 16px;
+    }
+
+    /* TITULOS */
+    .texto{
+        font-size: 32px;
+        padding: 30px 10px;
+    }
+
+    span{
+        font-size: 22px;
+    }
+
+    /* PLANOS */
+    .cardsPlanos{
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .planos{
+        width: 100%;
+        padding: 30px 20px;
+        font-size: 18px;
+    }
+
+    /* AVALIAÇÕES */
+    .containerAvaliação{
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .cardsAvaliacao{
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .nomePessoa{
+        font-size: 24px;
+    }
+
+    .textoPessoa{
+        font-size: 18px;
+    }
+
+    .imagemEstrela{
+        width: 28px;
+    }
+
+    /* DÚVIDAS */
+    .containerDuvidas{
+        width: 100%;
+    }
+
+    .cardsDuvidas{
+        width: 100%;
+        gap: 20px;
+    }
+
+    .item{
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    .boxDuvida{
+        width: 100%;
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    .pergunta{
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    .resposta{
+        font-size: 16px;
+        padding: 0 15px;
+    }
+
+    .item.ativo .resposta{
+        max-height: 300px;
+        padding: 15px;
+    }
+
+    .seta{
+        width: 30px;
+    }
+
+    .ver-mais{
+        font-size: 20px;
+        text-align: center;
+    }
+
+    /* FOOTER */
+    footer{
+        font-size: 18px;
+        padding: 20px 10px;
+    }
+
+    .containerFooter{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .descricaoEsquerda{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .esquerda{
+        gap: 40px;
+    }
+
+    .eventoss{
+        gap: 20px;
+    }
+
+    .apps{
+        gap: 30px;
+    }
+
+    .ap{
+        max-width: 70%;
+        padding: 0;
+    }
+
+    .topos{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #arolba{
+        font-size: 16px;
+        padding-top: 20px;
+    }
+
+}
