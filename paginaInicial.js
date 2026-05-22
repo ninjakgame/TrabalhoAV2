@@ -1,89 +1,167 @@
-// FAQ abrir e fechar
+// ===============================
+// MENU MOBILE
+// ===============================
 
-/*const buttons = document.querySelectorAll(".faq-btn");
+const menu = document.getElementById("menuLinks");
+const overlay = document.getElementById("overlay");
 
-buttons.forEach(btn => {
-    btn.addEventListener("click", function () {
-        const content = this.nextElementSibling;
-        if (content.style.display === "block") {
-            content.style.display = "none";
-        } else {
-            content.style.display = "block";
-        }
+function abrirMenu() {
+
+    menu.classList.toggle("ativo");
+    overlay.classList.toggle("ativo");
+
+    // TROCAR ÍCONE
+    const icon = document.querySelector(".menuMobile i");
+
+    if (menu.classList.contains("ativo")) {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-xmark");
+    } else {
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+    }
+}
+
+// FECHAR MENU AO CLICAR NO LINK
+
+const links = document.querySelectorAll(".links a");
+
+links.forEach(link => {
+    link.addEventListener("click", () => {
+
+        menu.classList.remove("ativo");
+        overlay.classList.remove("ativo");
+
+        const icon = document.querySelector(".menuMobile i");
+
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
     });
 });
 
-const elementos = document.querySelectorAll('.scroll-animacao');
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('mostrar');
-        }
-    });
-}, { threshold: 0.15 }); // Quando 15% do elemento aparecer
-
-elementos.forEach(elemento => observer.observe(elemento));
-
-*/
-
-function agendar(){
-    window.location.href = 'login.php';
-}
-
+// ===============================
+// ANIMAÇÃO AO SCROLL
+// ===============================
 
 function animarScroll() {
-  const elementos = document.querySelectorAll('.animacao');
 
-  elementos.forEach(el => {
-    const topo = el.getBoundingClientRect().top;
-    const alturaTela = window.innerHeight;
+    const elementos = document.querySelectorAll(".animacao");
 
-    if (topo < alturaTela - 100) {
-      el.classList.add('ativo');
-    }
-  });
+    elementos.forEach(el => {
+
+        const topo = el.getBoundingClientRect().top;
+        const alturaTela = window.innerHeight;
+
+        if (topo < alturaTela - 100) {
+            el.classList.add("ativo");
+        }
+    });
 }
-// ABRIR / FECHAR
-const perguntas = document.querySelectorAll('.pergunta');
+
+window.addEventListener("scroll", animarScroll);
+window.addEventListener("load", animarScroll);
+
+// ===============================
+// FAQ ABRIR E FECHAR
+// ===============================
+
+const perguntas = document.querySelectorAll(".pergunta");
 
 perguntas.forEach(pergunta => {
-  pergunta.addEventListener('click', () => {
-    const item = pergunta.parentElement;
-    item.classList.toggle('ativo');
-  });
+
+    pergunta.addEventListener("click", () => {
+
+        const item = pergunta.parentElement;
+
+        item.classList.toggle("ativo");
+    });
 });
 
-// VER MAIS
-const botao = document.querySelector('.ver-mais');
-const extras = document.querySelectorAll('.extra');
+// ===============================
+// VER MAIS FAQ
+// ===============================
 
-botao.addEventListener('click', () => {
-  extras.forEach(el => {
-    el.classList.add('mostrar');
-  });
+const botao = document.querySelector(".ver-mais");
+const extras = document.querySelectorAll(".extra");
 
-  botao.style.display = 'none';
-});
+if (botao) {
 
-function agora(){
-  window.location.href = "cadastroCliente.html"
+    botao.addEventListener("click", () => {
+
+        extras.forEach(el => {
+
+            el.classList.add("mostrar");
+        });
+
+        botao.style.display = "none";
+    });
 }
 
+// ===============================
+// BOTÃO AGENDAR
+// ===============================
 
-window.addEventListener('scroll', animarScroll);
-window.addEventListener('load', animarScroll);
+function agora() {
 
-function enviar(){
-    const nome = document.getElementById("nome").value;
-    const email = document.getElementById("email").value;
-    const mensagem = document.getElementById("mensagem").value;
+    window.location.href = "cadastroCliente.html";
+}
 
-    if(nome === "" || email === "" || mensagem === ""){
-        alert("Você esqueceu de colocar o nome, email ou a mensagem");
+function agendar() {
+
+    window.location.href = "login.php";
+}
+
+// ===============================
+// FORMULÁRIO
+// ===============================
+
+function enviar() {
+
+    const nome = document.getElementById("nome");
+    const email = document.getElementById("email");
+    const mensagem = document.getElementById("mensagem");
+
+    // VERIFICAR SE EXISTE
+
+    if (!nome || !email || !mensagem) {
+
+        alert("Campos não encontrados.");
         return;
-    } else {
-        alert("Enviado com sucesso para " + email);
-        window.location.href = "paginaInicial.html";
     }
+
+    // PEGAR VALORES
+
+    const valorNome = nome.value.trim();
+    const valorEmail = email.value.trim();
+    const valorMensagem = mensagem.value.trim();
+
+    // VALIDAR
+
+    if (
+        valorNome === "" ||
+        valorEmail === "" ||
+        valorMensagem === ""
+    ) {
+
+        alert("Preencha todos os campos.");
+        return;
+    }
+
+    // EMAIL VÁLIDO
+
+    const emailValido =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailValido.test(valorEmail)) {
+
+        alert("Digite um e-mail válido.");
+        return;
+    }
+
+    // SUCESSO
+
+    alert("Mensagem enviada com sucesso para " + valorEmail);
+
+    window.location.href = "paginaInicial.html";
 }
+

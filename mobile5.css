@@ -1,0 +1,64 @@
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media screen and (max-width: 768px){
+
+    #principal{
+        padding: 20px 10px;
+    }
+
+    .container{
+        width: 100%;
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .container h2{
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    /* BOTÕES */
+
+    .botoes{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+
+    .botoes button{
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    /* TABELA */
+
+    .tabela{
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        border-radius: 12px;
+    }
+
+    .tabela thead th{
+        font-size: 15px;
+        padding: 14px;
+    }
+
+    .tabela tbody td{
+        font-size: 14px;
+        padding: 14px;
+    }
+
+    input[type="checkbox"]{
+        width: 18px;
+        height: 18px;
+    }
+
+}

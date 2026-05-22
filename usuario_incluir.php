@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="cadastro.css">
 
+    <link rel="stylesheet" href="mobile3.css">
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <script>

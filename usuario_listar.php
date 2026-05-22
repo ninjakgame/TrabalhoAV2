@@ -15,6 +15,8 @@ require_once 'conexao.php';
   
     <link rel="stylesheet" href="usuarios.css">
 
+    <link rel="stylesheet" href="mobile5.css">
+
     <script>
 
         function editar(){

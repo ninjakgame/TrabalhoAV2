@@ -15,6 +15,8 @@
 
     <link rel="stylesheet" href="login.css">
 
+    <link rel="stylesheet" href="mobile2.css">
+
     <script>
 
         function login_validar(){

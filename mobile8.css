@@ -1,0 +1,331 @@
+/* ================= MOBILE COMPLETO ================= */
+
+@media screen and (max-width: 900px) {
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f8fafc;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* ================= HEADER MOBILE ================= */
+
+    /* HEADER */
+
+    header {
+        padding: 20px !important;
+    }
+
+    .conteudoTopo {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    .links {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .links a {
+        width: 100%;
+        padding: 14px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    /* TOPO */
+
+    .conteudoBaixo {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+        padding: 40px 0;
+    }
+
+    .descricao {
+        width: 100%;
+        align-items: center;
+        font-size: 28px !important;
+    }
+
+    #imagemEvento {
+        width: 100% !important;
+        max-width: 100%;
+        border-radius: 12px;
+    }
+
+    .agendamentoAgora {
+        width: 100%;
+        max-width: 320px;
+        padding: 16px;
+        font-size: 18px;
+    }
+
+    /* TITULOS */
+
+    .texto {
+        font-size: 32px !important;
+        padding: 30px 0 !important;
+    }
+
+    /* ================= MAIN ================= */
+
+    main {
+        width: 100%;
+        padding: 25px 18px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .container h2 {
+        font-size: 28px;
+        text-align: center;
+        color: #111827;
+        line-height: 42px;
+        margin-bottom: 30px;
+    }
+
+    .container h2 span {
+        color: #7E3FC2;
+        font-size: 30px;
+    }
+
+    /* ================= CARDS ================= */
+
+    .gridMolde {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .box {
+        width: 100%;
+        background: white;
+        border-radius: 22px;
+        padding: 30px 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .box:active {
+        transform: scale(0.98);
+    }
+
+    .box img {
+        width: 75px;
+        margin-bottom: 20px;
+    }
+
+    .box h2 {
+        font-size: 20px;
+        color: #111827;
+        line-height: 30px;
+    }
+
+    /* ================= FAQ ================= */
+
+    .duvidas {
+        margin-top: 60px;
+    }
+
+    .cardsDuvidas {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .item {
+        width: 100%;
+        background: white;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+    }
+
+    .pergunta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        cursor: pointer;
+    }
+
+    .pergunta p {
+        width: 85%;
+        font-size: 16px;
+        font-weight: 600;
+        color: #111827;
+        line-height: 25px;
+    }
+
+    .seta {
+        width: 18px;
+    }
+
+    .resposta {
+        padding: 0 20px 20px 20px;
+    }
+
+    .resposta p {
+        font-size: 15px;
+        color: #4b5563;
+        line-height: 24px;
+    }
+
+    .ver-mais {
+        text-align: center;
+        margin-top: 12px;
+        font-size: 17px;
+        font-weight: bold;
+        color: #7E3FC2;
+    }
+
+    /* ================= FORMULARIO ================= */
+
+    .boxSuporte {
+        width: 100%;
+        background: white;
+        margin-top: 65px;
+        border-radius: 24px;
+        padding: 30px 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .boxSuporte .esquerda {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 18px;
+    }
+
+    #suporte {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .boxSuporte .esquerda h2 {
+        font-size: 24px;
+        color: #111827;
+        line-height: 35px;
+    }
+
+    .direta {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .direta input {
+        width: 100%;
+        padding: 17px;
+        border: 1px solid #d1d5db;
+        border-radius: 14px;
+        font-size: 16px;
+        outline: none;
+        transition: 0.3s;
+        background-color: #f9fafb;
+    }
+
+    .direta input:focus {
+        border-color: #7E3FC2;
+        background-color: white;
+        box-shadow: 0 0 0 4px rgba(126, 63, 194, 0.15);
+    }
+
+    .direta button {
+        width: 100%;
+        border: none;
+        padding: 17px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #7E3FC2, #5b2ea3);
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .direta button:active {
+        transform: scale(0.98);
+    }
+
+    /* ================= FOOTER MOBILE ================= */
+
+    /* FOOTER */
+
+    footer {
+        padding: 40px 20px !important;
+    }
+
+    .containerFooter {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 !important;
+    }
+
+    .esquerdo,
+    .esquerda {
+        width: 100%;
+        align-items: center;
+        gap: 30px !important;
+    }
+
+    .descricaoEsquerda {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .apps {
+        gap: 20px !important;
+    }
+
+    .topos {
+        justify-content: center;
+        gap: 20px !important;
+    }
+
+    .topos img {
+        width: 40px;
+    }
+
+    #arolba {
+        font-size: 16px;
+    }
+
+
+}

@@ -11,6 +11,7 @@
 
 body{
     min-height: 100vh;
+    background: #f1f5f9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +22,7 @@ body{
 
 #principal{
     width: 100%;
-    max-width: 1000px;
+    max-width: 1100px;
 }
 
 /* ===== CARD ===== */
@@ -29,32 +30,34 @@ body{
 #principal > div{
     background-color: white;
     border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
 
 /* ===== TITULO ===== */
 
 h2{
     font-size: 32px;
-    color: #0f172a;
-    margin-bottom: 25px;
+    color: #111827;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 /* ===== AREA DOS BOTOES ===== */
 
 h2 + div{
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 /* ===== BOTOES ===== */
 
 button{
     border: none;
-    padding: 12px 22px;
-    border-radius: 10px;
+    padding: 13px 24px;
+    border-radius: 12px;
     cursor: pointer;
     font-size: 15px;
     font-weight: bold;
@@ -62,14 +65,14 @@ button{
     color: white;
 }
 
-/* ===== BOTAO VOLTAR  ===== */
+/* ===== BOTAO VOLTAR ===== */
 
 button:nth-child(1){
-    background-color: rgb(155, 155, 255);
+    background-color: #6366f1;
 }
 
 button:nth-child(1):hover{
-    background-color: rgb(133, 133, 240);
+    background-color: #4f46e5;
     transform: translateY(-2px);
 }
 
@@ -113,6 +116,7 @@ table{
     border-collapse: collapse;
     overflow: hidden;
     border-radius: 15px;
+    background: white;
 }
 
 /* ===== CABECALHO ===== */
@@ -123,8 +127,8 @@ thead{
 }
 
 thead th{
-    padding: 16px;
-    text-align: left;
+    padding: 18px;
+    text-align: center;
     font-size: 15px;
 }
 
@@ -139,14 +143,16 @@ tbody tr:nth-child(even){
 }
 
 tbody tr:hover{
-    background-color: #dbeafe;
+    background-color: #ede9fe;
 }
 
 /* ===== COLUNAS ===== */
 
 tbody td{
-    padding: 15px;
+    padding: 16px;
     border-bottom: 1px solid #e2e8f0;
+    text-align: center;
+    font-size: 15px;
 }
 
 /* ===== LINKS ===== */
@@ -155,6 +161,7 @@ a{
     text-decoration: none;
     color: #2563eb;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 a:hover{
@@ -170,16 +177,20 @@ input[type="checkbox"]{
     cursor: pointer;
 }
 
-/* ===== RESPONSIVO ===== */
+/* ===== MOBILE ===== */
 
-@media(max-width: 768px){
+@media screen and (max-width: 768px){
+
+    body{
+        padding: 15px;
+    }
 
     #principal > div{
         padding: 20px;
     }
 
     h2{
-        font-size: 24px;
+        font-size: 26px;
     }
 
     h2 + div{
@@ -191,6 +202,14 @@ input[type="checkbox"]{
     }
 
     table{
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    thead th,
+    tbody td{
+        padding: 14px;
         font-size: 14px;
     }
 
