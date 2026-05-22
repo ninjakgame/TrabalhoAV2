@@ -10,7 +10,7 @@ body{
 
 header{
     width: 100%;
-    background: url("Rectangle\ 8.jpg") 100% no-repeat;
+    background: url("../img/retangulo.jpg") 100% no-repeat;
     background-size: cover;
     font-size: 30px;
     padding: 20px 60px;
@@ -22,7 +22,6 @@ header{
     align-items: center;
     justify-content: space-between;
     font-weight: 700;
-    width: 100%;
 }
 
 .conteudoBaixo{
@@ -125,12 +124,6 @@ span{
 a{
     text-decoration: none;
     color: white;
-}
-
-.topo{
-    display: flex;
-    align-items: center;
-    width: 100%;
 }
 
 .links{

@@ -7,9 +7,9 @@
 
     <title>Cadastro</title>
 
-    <link rel="stylesheet" href="cadastro.css">
+    <link rel="stylesheet" href="./css/cadastro.css">
 
-    <link rel="stylesheet" href="mobile3.css">
+    <link rel="stylesheet" href="./css/mobile3.css">
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
@@ -32,7 +32,7 @@
 
             $.ajax({
 
-                url: 'acao_incluir.php',
+                url: './acao_incluir.php',
 
                 type: 'POST',
 
@@ -52,7 +52,7 @@
 
                         document.getElementById("formulario").reset();
 
-                        window.location.href = "login.php";
+                        window.location.href = "./login.php";
 
                     } else {
 
@@ -80,7 +80,7 @@
 
         function voltarPagina(){
 
-            window.location.href = "login.php";
+            window.location.href = "./login.php";
 
         }
 
@@ -96,7 +96,7 @@
 
         <div class="imagem">
 
-            <img src="image 11.jpg" id="imagemLogin">
+            <img src="./img/image 11.jpg" id="imagemLogin">
 
         </div>
 

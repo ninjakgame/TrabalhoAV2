@@ -7,9 +7,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="usuarios2.css">
+    <link rel="stylesheet" href="./css/usuarios2.css">
 
-    <link rel="stylesheet" href="mobile6.css">
+    <link rel="stylesheet" href="./css/mobile6.css">
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
@@ -46,7 +46,7 @@
 
             $.ajax({
 
-                url: 'acao_editar.php',
+                url: './acao_editar.php',
 
                 type: 'POST',
 
@@ -102,7 +102,7 @@
         function voltarPagina(){
 
             window.location.href =
-                "usuario_listar.php";
+                "./usuario_listar.php";
 
         }
 
@@ -131,7 +131,7 @@
                 alert('Usuário não informado.');
 
                 window.location.href =
-                    'usuario_listar.php';
+                    './usuario_listar.php';
 
             </script>
         ";
@@ -185,7 +185,7 @@
                 alert('Usuário não encontrado.');
 
                 window.location.href =
-                    'usuario_listar.php';
+                    './usuario_listar.php';
 
             </script>
         ";

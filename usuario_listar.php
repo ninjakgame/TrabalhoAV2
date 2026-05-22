@@ -13,9 +13,9 @@ require_once 'conexao.php';
 
     <title>SALA+</title>
   
-    <link rel="stylesheet" href="usuarios.css">
+    <link rel="stylesheet" href="./css/usuarios.css">
 
-    <link rel="stylesheet" href="mobile5.css">
+    <link rel="stylesheet" href="./css/mobile5.css">
 
     <script>
 
@@ -42,7 +42,7 @@ require_once 'conexao.php';
             const id = usuarios[0].value;
 
             window.location.href =
-                "usuario_editar.php?usuario_id=" + id;
+                "./usuario_editar.php?usuario_id=" + id;
 
         }
 
@@ -75,7 +75,7 @@ require_once 'conexao.php';
             if(confirmar){
 
                 window.location.href =
-                    "usuario_excluir.php?usuario_id=" + id;
+                    "./usuario_excluir.php?usuario_id=" + id;
 
             }
 
@@ -115,14 +115,14 @@ require_once 'conexao.php';
           
           <button
               type="button"
-              onclick="window.location.href='paginaInicial.html'"
+              onclick="window.location.href='./paginaInicial.html'"
            >
             Voltar
           </button>
 
             <button
                 type="button"
-                onclick="window.location.href='usuario_incluir.php'"
+                onclick="window.location.href='./usuario_incluir.php'"
             >
                 Incluir
             </button>
@@ -224,7 +224,7 @@ require_once 'conexao.php';
                             echo '
                                 <td>
                                     <a href="
-                                        usuario_editar.php?usuario_id='.$usuario_id.'
+                                        ./usuario_editar.php?usuario_id='.$usuario_id.'
                                     ">
                                         '.$login.'
                                     </a>

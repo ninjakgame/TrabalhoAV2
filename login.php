@@ -9,13 +9,13 @@
 
     <title>SALA+</title>
 
-    <link rel="shortcut icon" href="agendamento.png">
+    <link rel="shortcut icon" href="./img/agendamento.png">
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="./css/login.css">
 
-    <link rel="stylesheet" href="mobile2.css">
+    <link rel="stylesheet" href="./css/mobile2.css">
 
     <script>
 
@@ -51,7 +51,7 @@
 
                         alert("Login válido com sucesso!");
 
-                        window.location.href = "paginaInicial.html";
+                        window.location.href = "./paginaInicial.html";
 
                     } else {
 
@@ -79,7 +79,7 @@
 
         function cadastro(){
 
-            window.location.href = "usuario_incluir.php";
+            window.location.href = "./usuario_incluir.php";
 
         }
 
@@ -95,7 +95,7 @@
 
         <div class="imagem">
 
-            <img src="image 11.jpg" id="imagemLogin">
+            <img src="./img/image 11.jpg" id="imagemLogin">
 
         </div>
 

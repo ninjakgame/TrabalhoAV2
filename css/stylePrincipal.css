@@ -262,7 +262,7 @@ main{
 }
 
 footer{
-    background: url("Rectangle\ 8.jpg");
+    background: url("../img/retangulo.jpg") 100% no-repeat;
     background-size: cover;
     color: white;
     font-size: 24px;
