@@ -46,59 +46,51 @@ require_once 'conexao.php';
 
         }
 
-        function excluir(){
-
-            const usuarios = document.querySelectorAll(
-                'input[name="check_id"]:checked'
-            );
-
+        async function excluir() {
+            const usuarios = document.querySelectorAll('input[name="check_id"]:checked');
+            
             if(usuarios.length === 0){
-
-                alert("Selecione um registro para excluir");
-                return;
-
+                alert("Selecione um registro para excluir.");
+                return
             }
 
             if(usuarios.length > 1){
-
-                alert("Selecione apenas um registro para excluir");
+                alert("Selecione apenas um registro para excluir.");
                 return;
-
             }
 
-            const id = usuarios[0].value;
+            const usuario_id = usuarios[0].value;
 
-            let confirmar = confirm(
-                "Deseja realmente excluir este usuário?"
-            );
-
-            if(confirmar){
-
-                window.location.href =
-                    "./usuario_excluir.php?usuario_id=" + id;
-
+            if(!confirm("Deseja realmente excluir este usuário?")){
+                return;
             }
 
+            try{
+                const dados = new FormData();
+
+                dados.append("pUsuario_id", usuario_id);
+
+                const resposta = await fetch("usuario_excluir.php", {
+                    method: "POST",
+
+                    body: dados
+                });
+
+                const texto = await resposta.text();
+
+                alert(texto);
+
+                if(texto.includes("sucesso")){
+                    location.reload();
+                }
+            }
+
+            catch (erro){
+                console.error(erro);
+
+                alert("Erro ao excluir usuário!");
+            }
         }
-
-        function marcarTodos(){
-
-            let checkTodos =
-                document.getElementById("checkTodos");
-
-            let checks =
-                document.querySelectorAll(
-                    'input[name="check_id"]'
-                );
-
-            checks.forEach(function(item){
-
-                item.checked = checkTodos.checked;
-
-            });
-
-        }
-
     </script>
 
 </head>
@@ -136,7 +128,7 @@ require_once 'conexao.php';
 
             <button
                 type="button"
-                onclick="excluir()"
+                onclick="javascript:excluir();"
             >
                 Excluir
             </button>
@@ -152,13 +144,7 @@ require_once 'conexao.php';
                 <tr>
 
                     <th>
-
-                        <input
-                            type="checkbox"
-                            id="checkTodos"
-                            onclick="marcarTodos()"
-                        >
-
+                        
                     </th>
 
                     <th>ID</th>

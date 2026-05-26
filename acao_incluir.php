@@ -50,10 +50,9 @@ try{
     );
 
     $sqlVerifica->execute();
+    $sqlVerifica->store_result();
 
-    $resultado = $sqlVerifica->get_result();
-
-    if($resultado->num_rows > 0){
+    if($sqlVerifica->num_rows > 0){
 
         throw new Exception(
             "Este usuário já está cadastrado"
