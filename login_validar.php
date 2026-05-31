@@ -14,18 +14,28 @@ $sql = $conexao->prepare("
 $sql->bind_param("s", $vLogin);
 
 $sql->execute();
-$sql->store_result();
 
-if($sql->num_rows > 0){
-    $sql->bind_result($senhaBanco);
-    $sql->fetch();
+$result = $sql->get_result();
 
-    if (password_verify($vSenha, $senhaBanco)) {
+if($result->num_rows > 0){
+
+    $row = $result->fetch_assoc();
+
+    $senhaBanco = $row['senha'];
+
+    if(password_verify($vSenha, $senhaBanco)){
+
         echo "1";
+
     } else {
+
         echo "0";
+
     }
+
 } else {
+
     echo "0";
+
 }
 ?>
